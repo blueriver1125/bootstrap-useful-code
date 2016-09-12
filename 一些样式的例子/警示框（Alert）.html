@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>警告框（Alert）</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body{
+    padding: 5%;
+  }
+  </style>
+</head>
+<body>
+
+<h3>使用&times;作为关闭按钮</h3>
+<p>如果通过自定义的HTML属性（声明式）来触发警告框，需要在关闭按钮上设置自定义属性data-dismiss="alert"，如下所示：</p>
+
+<div class="alert alert-success" role="alert">
+    <button class="close"   type="button" data-dismiss="alert" >&times;</button>
+    <p>恭喜您操作成功！</p>
+</div>
+
+<hr/>
+<h3>使用a标签作为关闭按钮</h3>
+<p>其实关闭按钮，不一定非要用X号，也可以是普通的按钮元素或者链接元素，只需要保证关闭元素带有自定义属性data-dismiss="alert"即可，如下面示例所示：</p>
+
+<div class="alert alert-warning" role="alert">
+	<h4>谨防被骗</h4>
+	<p>请确认您转账的信息是你的亲朋好友，不要轻意相信不认识的人...</p>
+	<a href="#" class="btn btn-danger" data-dismiss="alert" >关闭</a>
+</div>
+
+<hr/>
+<h3>使用button按钮作为关闭按钮</h3>
+<p>当用户点击“关闭”按钮就可以关闭整个警告框。
+
+前面两个示例，操作关闭按钮时都是先查找 data-target 属性，再查找 href 属性，如果关闭按钮都没有定义这两个属性，就会操作其父元素。也就是说，关闭按钮不在 div.alert 容器内时，只要给关闭元素定义了data-target属性（如果是链接元素还可以通过href属性）,而且属性值与div.alert容器的id一致，关闭元素放在容器外也可以关闭警告框。</p>
+
+
+<div class="alert alert-danger" role="alert" id="myAlert">
+	<h4>谨防被骗</h4>
+	<p>请确认您转账的信息是你的亲朋好友，不要轻意相信不认识的人...</p>
+</div>
+<button type="button" data-target="#myAlert" class="btn btn-danger"  data-dismiss="alert">关闭</button>
+<br/>
+<hr/>
+<h3>JavaScript关闭警告框</h3>
+<p>
+	除了通过自定义data-dismiss="alert"属性来触发警告框关闭之外，还可以通过JavaScript方法。只需要在关闭按钮上绑定一个事件。如下所示：
+</p>
+<div class="alert alert-warning" role="alert" id="myAlert">
+    <h4>谨防被骗</h4>
+    <p>请确认您转账的信息是你的亲朋好友，不要轻意相信不认识的人...</p>
+    <button type="button"  class="btn btn-danger" id="close">关闭</button>
+</div>
+<script src="js/jquery-1.12.0.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+ <script>
+      $(function(){
+    $("#close").on("click",function(){
+        $(this).alert("close");
+    });  
+});
+  </script>
+</body>
+</html>

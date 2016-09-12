@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>下拉菜单</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<h3>属性触发 下拉菜单</h3>
+<ul class="nav nav-pills">
+    <li class="dropdown">
+		<a href="##" data-toggle="dropdown" class="dropdown-toggle" role="button" id="tutorial">教程<b class="caret"></b></a>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="tutorial">
+			<li role="presentation"><a href="##">CSS3</a></li>
+			<li role="presentation"><a href="##">HTML5</a></li>
+			<li role="presentation"><a href="##">Sass</a></li>
+		</ul>
+	</li>
+	<li class="active"><a href="##">前端论坛</a></li>
+	<li><a href="##">关于我们</a></li>
+</ul>
+
+
+<h3>JS触发 --？bug</h3>
+<ul class="nav nav-pills">
+    <li class="dropdown">
+		<a href="##"  class="dropdown-toggle mytoggle" role="button" id="tutorial">教程<b class="caret"></b></a>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="tutorial">
+			<li role="presentation"><a href="##">CSS3</a></li>
+			<li role="presentation"><a href="##">HTML5</a></li>
+			<li role="presentation"><a href="##">Sass</a></li>
+		</ul>
+	</li>
+	<li class="active"><a href="##">前端论坛</a></li>
+	<li><a href="##">关于我们</a></li>
+</ul>
+
+  <!-- cssfile  放在head中， script放在Body的最下面-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+ <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>   <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(function(){
+    $(".mytoggle").dropdown();
+})
+</script>
+</body>
+</html>

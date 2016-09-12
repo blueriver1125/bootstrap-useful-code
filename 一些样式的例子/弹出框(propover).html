@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>弹出框(Popover)</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body{
+    padding: 5%;
+  }
+  </style>
+</head>
+<body>
+<p>
+	弹出框(Popover)仅从外表上看，和前面介绍的提示框（Tooltip）长得差不多,
+	<br/>
+	弹出框Popover和提示框tooltip相比，就多了一个content内容，那么在此使用 data-content 来定义弹出框中的内容。同样可以使用<code>&lt;button&gt;</code>>或者<code>&lt;a&gt;</code>标签来制作.
+	<br/>
+	<strong>
+    提示框 tooltip 的默认触发事件是 hover 和 focus，而弹出框 popover 是 click
+    提示框 tooltip 只有一个内容(title)，而弹出框不仅可以设置标题（title）还可以设置内容(content)
+</strong>
+</p>
+	
+<button type="button" class="btn btn-default" id="myPopover">猛击我吧(JS设置参数)</button>
+
+<button type="button" 
+        class="btn btn-default" 
+        data-container="body" 
+        data-placement="bottom" 
+        data-toggle="popover" 
+        data-original-title="Bootstrap弹出框标题" 
+        data-content="Bootstrap弹出框的内容" 
+        data-trigger="hover"
+          data-dalay="600">
+        鼠标滑过我吧button（hover）
+</button>
+<a href="#" class="btn btn-default" 
+        data-container="body" 
+        data-placement="right" 
+        data-toggle="popover" 
+        title="Bootstrap弹出框标题" 
+        data-content="Bootstrap弹出框的内容">
+        猛击我吧 a
+</a>
+<hr/>
+<h3>弹出框--自定义结构属性</h3>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			 <img src="img/tanchukuang.jpg" alt="0 slide">
+		</div>
+		<div class="col-md-6"></div>
+	</div>
+<script src="js/jquery-1.12.0.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+ <script>
+$(function(){
+
+//js触发
+ $('[data-toggle="popover"]').popover();
+//js设置参数
+  $('#myPopover').popover({
+     title:"我是弹出框的标题",
+     content:"我是弹出框的内容",
+     placement:"left"
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>提示框</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding: 100px;
+  }
+  .btn {
+    margin: 20px 10px 20px;
+  }
+  </style>
+</head>
+<body>
+  <h3>按钮做的提示框</h3>
+  <button type="button" 
+          class="btn btn-default" 
+          data-toggle="tooltip" 
+          data-placement="left" 
+          data-original-title="提示框在左部"   
+          >
+  提示框居左      
+  </button>
+  <button type="button" 
+          class="btn btn-default" 
+          data-toggle="tooltip" 
+          data-placement="top" 
+          title="title定义提示信息-提示框居左"
+          >
+   提示框在顶部
+  </button>
+  <button type="button" 
+          class="btn btn-default" 
+          data-toggle="tooltip" 
+          data-placement="bottom" 
+          data-original-title="data-original-title定义-提示框在底部">
+  提示框在底部             
+  </button>
+  <button type="button" 
+          class="btn btn-default" 
+          data-toggle="tooltip" 
+          data-placement="right" 
+          data-original-title="提示框居右">
+  提示框居右      
+  </button>
+  <h3>链接制作的提示框</h3>
+  <a class="btn btn-primary" 
+     data-toggle="tooltip" 
+     data-placement="left" 
+     title="提示框居左">
+     提示框居左
+  </a>
+  <a class="btn btn-primary" 
+     data-toggle="tooltip" 
+     data-placement="top" 
+     title="提示框在顶部">
+     提示框在顶部
+  </a>
+  <a class="btn btn-primary" 
+     data-toggle="tooltip" 
+     data-placement="bottom" 
+     title="提示框在底部">
+     提示框在底部
+  </a>
+  <a class="btn btn-primary" 
+     data-toggle="tooltip" 
+     data-placement="right" 
+     title="提示框在居右">
+     提示框居右
+  </a>
+  <a href="##" 
+     class="btn btn-primary" 
+     id="myTooltip">
+     我是提示框(单独js触发)
+  </a>
+  <h3>提示框--其他的自定义属性
+</h3>
+<p>除此之外，提示框还有其他的自定义属性，每个自定义属性都具自身存在的意义，如下表所示：</p>
+
+<h4>data-animation="true"</h4>
+  <button type="button" 
+  class="btn btn-default" 
+  data-toggle="tooltip" 
+  data-placement="left" 
+  data-original-title="data-animation='true'"
+  data-animation="true">data-animation="true"</button>
+  
+  <h4>data-html="true"</h4>
+  <button type="button" 
+  class="btn btn-default" 
+  data-toggle="tooltip" 
+  data-placement="top" 
+  data-original-title="<h1>data-html='true'</h1>"
+  data-html="true">data-html="true"</button>
+  
+  <h4>data-trigger="click"</h4>
+  <button type="button" 
+  class="btn btn-default" 
+  data-toggle="tooltip" 
+  data-placement="bottom" 
+  data-original-title="data-trigger='click'"
+  data-trigger="click">data-trigger="click"</button>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			 <img src="img/tishikuang.jpg" alt="0 slide">
+		</div>
+		<div class="col-md-6"></div>
+	</div>
+</div>
+  
+
+  <script src="js/jquery-1.12.0.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+  $(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+    $('#myTooltip').tooltip({
+      title:"我是一个提示框，我在顶部出现",
+      placement:'top'
+    });
+  });
+  </script>
+</body>
+</html>

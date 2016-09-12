@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>手风琴（Collapse）</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<style>body{padding:10px;margin:10px}</style>
+</head>
+<body>
+<h3>手风琴--手风琴结构</h3>
+<p>手风琴最关键的部分，就是每个标题对应有一个内容，在Bootstrap框架中将这两个部分组合起来称为一个panel页板，如下边效果所示，他就有三个panel面板，将这三个面板组合在一起，就是一个面板组合 panel-group，也就是手风琴的结构。如：</p>
+<br/>
+<strong>简单点就是一个触发器和一个折叠区：<br/>
+触发手风琴可以通过自定义的 data-toggle 属性来触发。其中data-toggle值设置为 collapse，data-target="#折叠区标识符"。</strong>
+
+<div class="panel-group" id="accordion">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">标题一</a></h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">标题一对应的内容</div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">标题二</a></h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body"><p>标题二对应的内容ssosssssssssssssssssssssssssssssssssssss
+            sssssssssssssssssssssssssssssss</p>
+           <p> ssssssssssssssssssssssssssssssss</p>
+            <p>sssssssssssssssssssssssssssssssss</p>
+           <p> sssssssssssssssssssssssssssss
+            ssssssssssssssssssssssssssssssss</p>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse"data-parent="#accordion"href="#collapseThree">标题三</a></h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">标题三对应的内容</div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

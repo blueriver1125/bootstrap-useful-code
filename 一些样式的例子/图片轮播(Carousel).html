@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>图片轮播（Carousel）</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<style>body{padding:10px;margin:10px}</style>
+</head>
+<body>
+<h3>图片轮播--声明式触轮播图的播放</h3>
+<div class="row">
+    <div id="myCarousel" class="carousel slide col-md-4">
+    <!--设置图片轮播的顺序-->
+        <ol class="carousel-indicators">
+           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+           <li data-target="#myCarousel" data-slide-to="1"></li>
+           <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!--设置轮播图片-->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="http://images3.c-ctrip.com/rk/201407/ll580x145.jpg" alt="">
+                <div class="carousel-caption">
+                  <h4>标题一</h4>
+                  <p>图片一内容简介</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="http://images3.c-ctrip.com/dj/201408/zj/zj_580145.jpg" alt="">
+                <div class="carousel-caption">
+                   <h4>标题二</h4>
+                   <p>图片二内容简介</p>
+                </div>
+            </div>
+            <div class="item">
+            	<img src="http://images3.c-ctrip.com/rk/201403/yfdd580145a.png" alt="">
+                <div class="carousel-caption">
+                  <h4>标题三</h4>
+                  <p>图片三内容简介</p>
+                </div>
+            </div>
+      </div>
+      <!-- 设置轮播图片控制器 -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+</div>
+<hr/>
+<p>除了data-ride="carousel"、data-slide、data-slide-to 以外，轮播组件还支持其他三个自定义属性：</p>
+<table style="line-height: 20.7999992370605px;" border="1" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td style="width: 142px;">
+			<p>属性名称</p>
+			</td>
+			<td style="width: 83px;">
+			<p>类型</p>
+			</td>
+			<td style="width: 85px;">
+			<p>默认值</p>
+			</td>
+			<td style="width: 258px;">
+			<p>描述</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 142px;">
+			<p>data-interval</p>
+			</td>
+			<td style="width: 83px;">
+			<p>number</p>
+			</td>
+			<td style="width: 85px;">
+			<p>5000</p>
+			</td>
+			<td style="width: 258px;">
+			<p>幻灯片轮换的等待时间（毫秒）。如果为false,轮播将不会自动开始循环</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 142px;">
+			<p>data-pause</p>
+			</td>
+			<td style="width: 83px;">
+			<p>string</p>
+			</td>
+			<td style="width: 85px;">
+			<p>hover</p>
+			</td>
+			<td style="width: 258px;">
+			<p>默认鼠标悬停留在幻灯片区域即停止播放，离开即开始播放</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 142px;">
+			<p>data-wrap</p>
+			</td>
+			<td style="width: 83px;">
+			<p>布尔值</p>
+			</td>
+			<td style="width: 85px;">
+			<p>true</p>
+			</td>
+			<td style="width: 258px;">
+			<p>轮播是否持续循环</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<hr/>
+<h3>图片轮播--JavaScript触发方法</h3>			
+<div class="code-desc co">
+                <p style="line-height: 20.7999992370605px;">默认情况之下，如果 carousel 容器上定义了 data-ride="carousel" 属性，页面加载之后就会自动加载轮播图片切换效果。如果没有定义 data-ride 属性，可以通过 JavaScript 方法来触发轮播图片切换。具体使用方法如下：</p>
+
+<pre class="code" style="line-height: 20.7999992370605px;">$(".carousel").carousel();</pre>
+
+<p style="line-height: 20.7999992370605px;">也可以通过容器的 ID 来指定：</p>
+
+<pre class="code" style="line-height: 20.7999992370605px;">$("#slidershow").carousel();</pre>
+
+<p style="line-height: 20.7999992370605px;">在 carousel() 方法中可以设置具体的参数，如：</p>
+
+<table style="line-height: 20.8px;" border="1" cellpadding="0" cellspacing="0" height="321" width="446">
+	<tbody>
+		<tr>
+			<td style="width: 142px;">
+			<p>属性名称</p>
+			</td>
+			<td style="width: 142px;">
+			<p>类型</p>
+			</td>
+			<td style="width: 142px;">
+			<p>默认值</p>
+			</td>
+			<td style="width: 142px;">
+			<p>描述</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 142px;">
+			<p>interval</p>
+			</td>
+			<td style="width: 142px;">
+			<p>number</p>
+			</td>
+			<td style="width: 142px;">
+			<p>5000</p>
+			</td>
+			<td style="width: 142px;">
+			<p>幻灯片轮换的等待时间（毫秒）。如果为false,轮播将不会自动开始循环</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 142px;">
+			<p>pause</p>
+			</td>
+			<td style="width: 142px;">
+			<p>string</p>
+			</td>
+			<td style="width: 142px;">
+			<p>hover</p>
+			</td>
+			<td style="width: 142px;">
+			<p>默认鼠标悬停留在幻灯片区域即停止播放，离开即开始播放</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 142px;">
+			<p>wrap</p>
+			</td>
+			<td style="width: 142px;">
+			<p>布尔值</p>
+			</td>
+			<td style="width: 142px;">
+			<p>true</p>
+			</td>
+			<td style="width: 142px;">
+			<p>轮播是否持续循环</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="line-height: 20.7999992370605px;">使用时，在初始化插件的时候可以传关相关的参数，如：</p>
+
+<pre class="code" style="line-height: 20.7999992370605px;">$("#slidershow").carousel({
+       interval: 3000
+});</pre>
+
+<p style="line-height: 20.7999992370605px;">实际上，当我们给carousel()方法配置参数之后，轮播效果就能自动切换。但 Bootstrap 框架中的 carousel 插件还给使用者提供了几种特殊的调用方法，简单说明如下：</p>
+
+<ul>
+	<li style="line-height: 20.8px;">.carousel("cycle")：从左向右循环播放；</li>
+	<li style="line-height: 20.8px;">.carousel("pause")：停止循环播放；</li>
+	<li style="line-height: 20.8px;">.carousel("number")：循环到指定的帧，下标从0开始，类似数组；</li>
+	<li style="line-height: 20.8px;">.carousel("prev")：返回到上一帧；</li>
+	<li style="line-height: 20.8px;">.carousel("next")：下一帧</li>
+</ul>
+
+<p style="line-height: 20.7999992370605px;">例如，前面的调用方法，向前和向后两个按钮还无法正常工作，其实可以通过 .carousel("prev") 和 .carousel("next") 方法让他们能正常工作，代码如下：</p>
+
+<pre class="code" style="line-height: 20.7999992370605px;">$(function(){
+    $("#slidershow").carousel({
+        interval:2000
+    });
+    $("#slidershow a.left").click(function(){
+        $(".carousel").carousel("prev");
+    });
+    $("#slidershow a.right").click(function(){
+        $(".carousel").carousel("next");
+    });
+});</pre>
+
+<p>&nbsp;</p>
+
+</div>
+<div class="row">
+	<div id="slidershow" class="carousel slide col-md-4">
+    <!-- 设置图片轮播的顺序 -->
+    <ol class="carousel-indicators">
+        <li class="active" data-target="#slidershow" data-slide-to="0">1</li>
+        <li data-target="#slidershow" data-slide-to="1">2</li>
+        <li data-target="#slidershow" data-slide-to="2">3</li>
+    </ol>
+    <!-- 设置轮播图片 -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <a href="##"><img src="http://images3.c-ctrip.com/rk/201407/ll580x145.jpg" alt=""></a>
+            <div class="carousel-caption">
+                <h3>图片标题1</h3>
+                <p>描述内容1...</p>
+            </div>
+        </div>
+        <div class="item">
+            <a href="##"><img src="http://images3.c-ctrip.com/dj/201408/zj/zj_580145.jpg" alt=""></a>
+            <div class="carousel-caption">
+                <h3>图片标题2</h3>
+                <p>描述内容2...</p>
+            </div>
+        </div>
+        <div class="item">
+            <a href="##"><img src="http://images3.c-ctrip.com/dj/201408/zqgq_580145.jpg" alt=""></a>
+            <div class="carousel-caption">
+                <h3>图片标题3</h3>
+                <p>描述内容3...</p>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#slidershow" role="button">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#slidershow" role="button">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+  
+  
+  
+</div>
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+  <script>
+  $(function(){
+  	$(".carousel").carousel();
+  	//js触发
+      $("#slidershow").carousel({
+        interval:2000
+    });
+    $("#slidershow a.left").click(function(){
+        $(".carousel").carousel("prev");
+    });
+    $("#slidershow a.right").click(function(){
+        $(".carousel").carousel("next");
+    });
+  });
+   </script>
+</body>
+</html>
